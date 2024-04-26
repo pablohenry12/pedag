@@ -4,65 +4,86 @@ body {
     background-attachment: fixed;
     background-size: cover;
     min-width: 280px;
-    max-width: 800px;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 main {
     padding: 20px;
     border-radius: 10px;
-    min-width: 280px;
-    max-width: 800px;
-    margin: 0 auto; /* Centraliza o conteúdo */
+    margin: 20px auto; /* Centraliza o conteúdo */
+    background-color: rgba(255, 255, 255, 0.8); /* Adiciona um fundo branco transparente */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra suave */
 }
 
 h1 {
-    color: rgb(0, 0, 0);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 3vw; /* Tamanho da fonte responsivo */
+    color: #333;
+    font-size: 6vw; /* Tamanho da fonte responsivo */
     text-align: center; /* Centraliza o título */
+    transition: color 0.3s ease; /* Adiciona uma transição suave para a cor */
 }
 
 #logo {
-    max-width: 50%; /* Reduz o tamanho da imagem */
+    max-width: 30%; /* Reduz o tamanho da imagem */
     height: auto; /* Garante que a altura se ajuste automaticamente */
-    display: block; /* Para centralizar a imagem */
-    margin: 0; 
+    display: inline; /* Para centralizar a imagem */
+    margin: 0 auto 20px; /* Centraliza a imagem e adiciona margem inferior */
+    transition: transform 0.2s ease; /* Adiciona uma transição suave para a escala */
 }
 
 p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 2.5vw; /* Tamanho da fonte responsivo */
+    font-size: 4vw; /* Tamanho da fonte responsivo */
     text-align: justify;
-    margin-bottom: 20px; /* Espaçamento maior abaixo do parágrafo */
+    margin-bottom: 30px; /* Espaçamento maior abaixo do parágrafo */
 }
 
 button {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 2.5vw; /* Tamanho da fonte responsivo */
-    width: 80%; /* Largura relativa do botão */
-    max-width: 200px; /* Largura máxima do botão */
-    height: auto; /* Altura ajustável */
+    font-size: 3vw; /* Tamanho da fonte responsivo */
+    width: 200%; /* Largura relativa do botão */
+    max-width: 300px; /* Largura máxima do botão */
+    height: 40px; 
     border-radius: 50px;
     background-color: #d5a171;
     border: none; /* Remove a borda do botão */
     display: block; /* Para centralizar o botão em telas menores */
     margin: 20px auto 0; /* Centraliza o botão e adiciona margem superior */
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave para a cor de fundo */
 }
 
-button:hover {
-    color: aliceblue;
-    background-color: rgb(92, 162, 223);
-}
+@media only screen and (min-width: 600px) {
+    h1 {
+        font-size: 2.5vw; /* Tamanho da fonte do título em telas maiores */
+    }
 
-@media only screen and (min-width: 650px) {
     p {
-        font-size: 20px; /* Aumenta o tamanho da fonte do parágrafo em telas menores */
+        font-size: 2vw; /* Tamanho da fonte do parágrafo em telas maiores */
     }
 
     button {
+        font-size: 2vw; /* Tamanho da fonte do botão em telas maiores */
         position: absolute; /* Posição absoluta para telas maiores */
-        bottom: 40px; /* Distância do botão em relação ao fundo */
-        right: 40px; /* Distância do botão em relação à direita */
+        bottom: 20px; /* Distância do botão em relação ao fundo */
+        right: 20px; /* Distância do botão em relação à direita */
         margin: 0; /* Remove a margem */
+        height: auto; /* Tamanho ajustável */
     }
+}
+#logo {
+    max-width: 50%; /* Reduz o tamanho da imagem */
+}
+
+/* Efeito hover nos elementos */
+button:hover {
+    background-color: #b57e4c; /* Altera a cor de fundo ao passar o mouse */
+}
+
+h1:hover {
+    color: #b57e4c; /* Altera a cor do título ao passar o mouse */
+}
+
+#logo:hover {
+    transform: scale(1.1); /* Aumenta ligeiramente o tamanho da imagem ao passar o mouse */
 }
