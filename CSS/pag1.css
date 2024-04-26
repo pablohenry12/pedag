@@ -1,1 +1,68 @@
-body{background-image:url(Imagens/background\ img.jpg);background-repeat:no-repeat;background-attachment:fixed;background-size:cover;min-width:280px;max-width:800px}main{padding:20px;border-radius:10px;min-width:280px;max-width:800px}h1{color:#000;font-family:'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif;font-size:50px}#logo{max-width:280px;min-width:300px}p{font-family:Verdana,Geneva,Tahoma,sans-serif;font-size:20px;text-align:justify}button{font-family:Arial,Helvetica,sans-serif;font-size:20px;position:relative;display:inline-block;top:70px;margin-left:70%;width:220px;height:70px;border:50px;border-radius:50px;background-color:#d5a171}button:hover{color:#f0f8ff;background-color:#5ca2df}
+body {
+    background-image: url(Imagens/background\ img.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-width: 280px;
+    max-width: 800px;
+}
+
+main {
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 280px;
+    max-width: 800px;
+    margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+h1 {
+    color: rgb(0, 0, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3vw; /* Tamanho da fonte responsivo */
+    text-align: center; /* Centraliza o título */
+}
+
+#logo {
+    max-width: 50%; /* Reduz o tamanho da imagem */
+    height: auto; /* Garante que a altura se ajuste automaticamente */
+    display: block; /* Para centralizar a imagem */
+    margin: 0; 
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2.5vw; /* Tamanho da fonte responsivo */
+    text-align: justify;
+    margin-bottom: 20px; /* Espaçamento maior abaixo do parágrafo */
+}
+
+button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5vw; /* Tamanho da fonte responsivo */
+    width: 80%; /* Largura relativa do botão */
+    max-width: 200px; /* Largura máxima do botão */
+    height: auto; /* Altura ajustável */
+    border-radius: 50px;
+    background-color: #d5a171;
+    border: none; /* Remove a borda do botão */
+    display: block; /* Para centralizar o botão em telas menores */
+    margin: 20px auto 0; /* Centraliza o botão e adiciona margem superior */
+}
+
+button:hover {
+    color: aliceblue;
+    background-color: rgb(92, 162, 223);
+}
+
+@media only screen and (min-width: 650px) {
+    p {
+        font-size: 20px; /* Aumenta o tamanho da fonte do parágrafo em telas menores */
+    }
+
+    button {
+        position: absolute; /* Posição absoluta para telas maiores */
+        bottom: 40px; /* Distância do botão em relação ao fundo */
+        right: 40px; /* Distância do botão em relação à direita */
+        margin: 0; /* Remove a margem */
+    }
+}
