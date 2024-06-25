@@ -22,6 +22,7 @@ let selectedTime = null;
 document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('name').value = localStorage.getItem('name') || '';
     document.getElementById('class').value = localStorage.getItem('class') || '';
+    displayAppointmentInfo();
 });
 
 function selectDay(date) {
@@ -69,11 +70,37 @@ function confirmAppointment() {
         localStorage.setItem('name', name);
         localStorage.setItem('class', userClass);
 
-        alert(`Agendamento confirmado para ${selectedDate} às ${selectedTime}.\nNome: ${name}\nTurma: ${userClass}`);
+        displayAppointmentInfo();
+
         selectDay(selectedDate); // Atualizar horários disponíveis
     } else {
         alert('Por favor, selecione uma data e um horário.');
     }
+}
+
+function displayAppointmentInfo() {
+    const appointmentInfoDiv = document.getElementById('appointment-info');
+    const name = localStorage.getItem('name');
+    const userClass = localStorage.getItem('class');
+    if (name && userClass) {
+        appointmentInfoDiv.innerHTML = `
+            <h2>Informações do Agendamento</h2>
+            <p><strong>Nome:</strong> ${name}</p>
+            <p><strong>Turma:</strong> ${userClass}</p>
+            <p><strong>Agendamentos:</strong></p>
+            <ul>${getBookedTimesHtml()}</ul>
+        `;
+    }
+}
+
+function getBookedTimesHtml() {
+    const bookedTimesHtml = [];
+    for (const [date, times] of Object.entries(bookedTimes)) {
+        times.forEach(time => {
+            bookedTimesHtml.push(`<li>${date} às ${time}</li>`);
+        });
+    }
+    return bookedTimesHtml.join('');
 }
 
 function getWeekNumber(d) {
