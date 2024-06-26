@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.user-info {
+    margin-bottom: 20px;
+}
+
+.user-info label, .user-info input {
+    display: block;
+    margin: 5px auto;
+    width: 80%;
+    max-width: 300px;
+}
+
+.schedule {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.days, .times {
+    margin: 10px;
+}
+
+.days button, .times button {
+    display: block;
+    margin: 5px;
+    padding: 10px;
+    width: 100px;
+    cursor: pointer;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.days button:hover, .times button:hover {
+    background-color: #e0e0e0;
+}
+
+.times button.selected {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#confirm-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#confirm-btn:hover {
+    background-color: #45a049;
+}
+
+#appointment-info {
+    margin-top: 20px;
+    text-align: left;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#appointment-info h2 {
+    text-align: center;
+}
