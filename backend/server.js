@@ -40,5 +40,5 @@ app.post('/api/appointments', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server running at https://agendamentopedagogico.netlify.app`);
 });
