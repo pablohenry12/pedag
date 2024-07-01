@@ -3,35 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendamento de Atendimento</title>
-    <link rel="stylesheet" href="CSS/agendamento.css">
+    <title>Agendamento</title>
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-    <main>
-        <h1>Agendamento de Atendimento</h1>
-        <div class="user-info">
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="class">Turma:</label>
-            <input type="number" id="class" name="class" required>
-        </div>
-        <div class="schedule">
-            <div class="days">
-                <button onclick="selectDay('2024-06-24')">Segunda</button>
-                <button onclick="selectDay('2024-06-25')">Terça</button>
-                <button onclick="selectDay('2024-06-26')">Quarta</button>
-                <button onclick="selectDay('2024-06-27')">Quinta</button>
-                <button onclick="selectDay('2024-06-28')">Sexta</button>
-            </div>
-            <div class="times" id="available-times">
-                <!-- Horários disponíveis serão listados aqui -->
-            </div>
-        </div>
-        <div id="appointment-info">
-            <!-- Informações do agendamento confirmadas serão exibidas aqui -->
-        </div>
-        <button id="confirm-btn" onclick="confirmAppointment()">Confirmar Agendamento</button>
-    </main>
+    <h1>Agendamento de Atendimento</h1>
+    <form id="appointmentForm">
+        <label for="name">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <label for="class">Turma:</label>
+        <input type="number" id="classe" name="classe" required>
+        <label for="day">Dia:</label>
+        <select id="dia" name="dia" required>
+            <option value="Segunda">Segunda</option>
+            <option value="Terça">Terça</option>
+            <option value="Quarta">Quarta</option>
+            <option value="Quinta">Quinta</option>
+            <option value="Sexta">Sexta</option>
+        </select>
+        <label for="time">Horário:</label>
+        <select id="hora" name="hora" required>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+        </select>
+        <button type="submit">Agendar</button>
+    </form>
+    <div id="appointment-info"></div>
     <script src="JS/agendamento.js"></script>
 </body>
 </html>
